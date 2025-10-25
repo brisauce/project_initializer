@@ -1,0 +1,3 @@
+#define project_initializer_VERSION_MAJOR ${project_initializer_VERSION_MAJOR}
+#define project_initializer_VERSION_MINOR ${project_initializer_VERSION_MINOR}
+#define project_initializer_VERSION_PATCH ${project_initializer_VERSION_PATCH}
