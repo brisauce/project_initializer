@@ -31,11 +31,18 @@ bad_chars[i]);
 
       for (uint32_t j = 0; j < num_bad_chars; j++)
       {
-        printf("%c%c", 
-               bad_chars[j], 
-               (j == num_bad_chars - 1) ? '\n' : ' ');
+        if (bad_chars[j] == ' ')
+        {
+          fputs("\" \"", stdout);
+        }
+        else
+        {
+          printf("%c ", bad_chars[j]);
+        }
       }
 
+      putc('\n', stdout);
+      fflush(stdout);
       freeArena(program_arena);
       exit(EXIT_FAILURE);
     }

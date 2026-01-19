@@ -46,7 +46,7 @@ void genConfigHeader(arena * program_arena)
   fprintf(fp, "#define %s_VERSION_PATCH ${%s_VERSION_PATCH}\n\n\n",
           program_arena->project_name,
           program_arena->project_name);
-  fprintf(fp, "#define PROJECT_NAME %s\n", program_arena->project_name);
+  fprintf(fp, "#define PROJECT_NAME ${PROJECT_NAME}\n");
 
   fclose(fp);
 }

@@ -3,7 +3,22 @@
 #include <string.h>
 
 #include "program_arena.h"
+#include "build/project_initializerConfig.h"
 
+void printHelp(void)
+{
+  printf("\
+project_initializer version %d.%d.%d\n\
+\n\
+Example use:\n\
+project_initializer (--help) \"project name\"\n\n\
+This program generates project files for my (Brian) specific development setup.\n\
+If a duplicate file to what this program would generate would be generated, the user will be prompted\n\
+To tell the program whether or not to overwrite that file.\n",
+         project_initializer_VERSION_MAJOR,
+         project_initializer_VERSION_MINOR,
+         project_initializer_VERSION_PATCH);
+}
 
 arena * parseCLI (int argc, char ** argv)
 {
@@ -16,7 +31,20 @@ arena * parseCLI (int argc, char ** argv)
 
   arena * program_arena = calloc(1, sizeof(arena));
 
-  strcpy(program_arena->project_name, argv[1]);
-
+  for (int i = 1; i < argc; i++)
+  {
+    if (!strcmp(argv[i], "--help") || !strcmp(argv[i], "-help") || !strcmp(argv[i], "help") || 
+        !strcmp(argv[i], "--h"))
+    {
+      printHelp();
+      free(program_arena);
+      exit(EXIT_SUCCESS);
+    }
+    else
+    {
+      strcpy(program_arena->project_name, argv[1]);
+    }
+  }
+  
   return program_arena;
 }
