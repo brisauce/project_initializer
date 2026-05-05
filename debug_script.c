@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/stat.h>
 
 #include "program_arena.h"
 #include "check_overwrite.h"
@@ -37,8 +38,10 @@ cd build\n\
 if [ -e $PROGRAM_NAME ]; then\n\
   run_gdbgui\n\
 else\n\
-  echo \"$PROGRAM_NAME not found. please run configure.sh then build.sh\"\
+  echo \"$PROGRAM_NAME not found. please run configure.sh then build.sh\"\n\
 fi", program_arena->project_name);
+
+  chmod(filename, S_IRWXU);
 
   fclose(fp);
 }

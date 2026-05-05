@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/stat.h>
 
 #include "program_arena.h"
 #include "check_overwrite.h"
@@ -41,6 +42,7 @@ else\n\
   echo \"ERROR: compile_commands.json not found in directory:\"\n\
   pwd\n\
 fi\n");
-
+  chmod(filename, S_IRWXU);
+  
   fclose(fp);
 }

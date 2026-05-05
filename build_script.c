@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/stat.h>
 
 #include "program_arena.h"
 #include "check_overwrite.h"
@@ -32,6 +33,7 @@ else\n\
   echo \"Build folder not found. Please run configure.sh to generate build folder and necessary contents.\"\n\
 fi\n\
 ");
+  chmod(filename, S_IRWXU);
 
   fclose(fp);
 }

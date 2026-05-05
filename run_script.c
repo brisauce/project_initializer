@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/stat.h>
 
 #include "program_arena.h"
 #include "check_overwrite.h"
@@ -45,4 +46,7 @@ if [ -e $PROGRAM_NAME ]; then\n\
 else\n\
   echo \"$PROGRAM_NAME not found. Please run build.sh.\"\n\
 fi\n", program_arena->project_name);
+  chmod(filename, S_IRWXU);
+
+  fclose(fp);
 }

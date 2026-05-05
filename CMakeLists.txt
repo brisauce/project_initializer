@@ -2,12 +2,12 @@ cmake_minimum_required(VERSION 3.22.1)
 
 project(
 project_initializer 
-VERSION 0.2.0
+VERSION 0.3.0
 LANGUAGES C
 )
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-# set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_BUILD_TYPE Release)
 add_executable(${PROJECT_NAME} main.c build_script.c CMakeLists.c configure_script.c 
 run_script.c debug_script.c program_arena.c check_overwrite.c CLI.c source_files.c)
 configure_file(${PROJECT_NAME}Config.h.in ${PROJECT_NAME}Config.h)
