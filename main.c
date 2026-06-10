@@ -15,7 +15,7 @@
 
 void validateProjectName (arena * program_arena)
 {
-  char bad_chars[] = {'/', '.', '@', '#', '|', '&', '$', '{', '}', '[', ']', '(', ')', '*', ' '};
+  char bad_chars[] = {'/', '@', '#', '|', '&', '$', '{', '}', '[', ']', '(', ')', '*'};
 
   uint32_t num_bad_chars = sizeof(bad_chars);
 
@@ -31,14 +31,7 @@ bad_chars[i]);
 
       for (uint32_t j = 0; j < num_bad_chars; j++)
       {
-        if (bad_chars[j] == ' ')
-        {
-          fputs("\" \"", stdout);
-        }
-        else
-        {
-          printf("%c ", bad_chars[j]);
-        }
+        printf("%c ", bad_chars[j]);
       }
 
       putc('\n', stdout);

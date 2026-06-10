@@ -4,6 +4,7 @@
 #include "program_arena.h"
 
 void genSourceFiles(arena * program_arena);
+void genMainDotC(arena * program_arena);
 
 
 #endif

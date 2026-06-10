@@ -23,10 +23,10 @@ To tell the program whether or not to overwrite that file.\n",
 arena * parseCLI (int argc, char ** argv)
 {
 
-  if (argc != 2)
+  if (argc == 1)
   {
-    puts("This program takes one argument, that being the name of the project being generated. Try again.");
-    exit(EXIT_FAILURE);
+    printHelp();
+    exit(EXIT_SUCCESS);
   }
 
   arena * program_arena = calloc(1, sizeof(arena));
@@ -39,6 +39,10 @@ arena * parseCLI (int argc, char ** argv)
       printHelp();
       free(program_arena);
       exit(EXIT_SUCCESS);
+    }
+    else if (!strcmp(argv[i], "--debug"))
+    {
+      program_arena->debug = true;
     }
     else
     {

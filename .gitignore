@@ -72,7 +72,7 @@ _deps
 
 build/
 [Bb][Uu][Ii][Ll][Dd]/
-
+test_dir/
 .ccls-cache/
 
 #   The next person who reads this won't need my compile commands 

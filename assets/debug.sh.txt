@@ -1,13 +1,11 @@
-#! /usr/bin/sh
-
-PROGRAM_NAME="project_initializer"
+PROGRAM_NAME='%s'
 
 browser_name="google-chrome"
 run_gdbgui() {
   local dir="$(whereis -b $browser_name)"
   local browser_dir="${dir#"$browser_name: "}"
 
-  gdbgui -g "gdb --q" --browser "$browser_dir" --args ./$PROGRAM_NAME --debug test
+  gdbgui -g "gdb --q" --browser "$browser_dir" --args ./$PROGRAM_NAME 
 }
 
 cd build

@@ -1,3 +1,18 @@
+#ifndef PROJ_CONFIG
+#define PROJ_CONFIG
+#include <stdlib.h>
 #define project_initializer_VERSION_MAJOR ${project_initializer_VERSION_MAJOR}
 #define project_initializer_VERSION_MINOR ${project_initializer_VERSION_MINOR}
 #define project_initializer_VERSION_PATCH ${project_initializer_VERSION_PATCH}
+
+#define ASSET_DIR "${PROJECT_SOURCE_DIR}/assets"
+
+#define DEBUG_PREFIX "gestated"
+
+typedef struct {
+  char * buf;
+  size_t buf_size;
+}buffer;
+
+#define BUF_SIZE 1024
+#endif
