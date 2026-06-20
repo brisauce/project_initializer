@@ -2,17 +2,18 @@
 
 if [ -d build ]
 then
+  echo "Removing build directory..."
   rm -rf ./build/
 fi
 
-cmake -S . -B ./build
+cmake -S . -B ./build -DCMAKE_BUILD_TYPE=Release
 
 cd build/
 
 if [ -e compile_commands.json ]
 then
   mv compile_commands.json ..
-else 
+else
   echo "ERROR: compile_commands.json not found in directory:"
   pwd
 fi

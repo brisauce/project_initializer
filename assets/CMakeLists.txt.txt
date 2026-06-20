@@ -7,7 +7,6 @@ LANGUAGES C
 )
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_BUILD_TYPE Debug)
 add_executable(${PROJECT_NAME} main.c)
 configure_file(${PROJECT_NAME}Config.h.in ${PROJECT_NAME}Config.h)
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
