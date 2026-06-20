@@ -7,7 +7,6 @@ LANGUAGES C
 )
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_BUILD_TYPE Debug)
 add_executable(${PROJECT_NAME} main.c build_script.c CMakeLists.c configure_script.c 
 run_script.c debug_script.c program_arena.c check_overwrite.c CLI.c source_files.c file_to_buf.c)
 configure_file(${PROJECT_NAME}Config.h.in ${PROJECT_NAME}Config.h)
