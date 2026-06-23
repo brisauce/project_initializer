@@ -12,6 +12,7 @@
 #include "debug_script.h"
 #include "run_script.h"
 #include "CLI.h"
+#include "gitignore.h"
 
 void validateProjectName (arena * program_arena)
 {
@@ -64,7 +65,9 @@ int main (int argc, char ** argv)
 
   genRunScript(program_arena);
 
-  freeArena(program_arena);
+  //  gitignore
+  genGitignore(program_arena);
 
+  freeArena(program_arena);
 }
 

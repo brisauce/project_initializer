@@ -2,13 +2,14 @@ cmake_minimum_required(VERSION 3.22.1)
 
 project(
 project_initializer 
-VERSION 0.4.2
+VERSION 0.5.0
 LANGUAGES C
 )
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_executable(${PROJECT_NAME} main.c build_script.c CMakeLists.c configure_script.c 
-run_script.c debug_script.c program_arena.c check_overwrite.c CLI.c source_files.c file_to_buf.c)
+run_script.c debug_script.c program_arena.c check_overwrite.c CLI.c 
+source_files.c file_to_buf.c copyfile.c gitignore.c)
 configure_file(${PROJECT_NAME}Config.h.in ${PROJECT_NAME}Config.h)
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
 
