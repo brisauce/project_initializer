@@ -43,8 +43,9 @@ void genConfigScript(arena * program_arena)
 
   buffer temp = {
     .buf_size = BUF_SIZE,
-    .buf = calloc(1, temp.buf_size)
   };
+  temp.buf = calloc(1, temp.buf_size);
+   
   assert(temp.buf);
 
   copyFileToBuf(&temp, source_fp);
